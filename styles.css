@@ -19,11 +19,8 @@ body {
     border-radius: 50%;
     margin-top: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Bouncing Animation */
-.bounce-photo {
     animation: bounce-in 2s ease-out forwards;
+    opacity: 0; /* Initial state before animation */
 }
 
 /* Keyframes for bounce animation */
@@ -105,3 +102,4 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
