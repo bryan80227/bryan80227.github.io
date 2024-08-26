@@ -15,7 +15,7 @@
             align-items: center;
             padding: 20px;
         }
-        
+
         .container {
             max-width: 800px;
             background-color: white;
@@ -23,18 +23,32 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-        
+
         h1 {
             text-align: center;
         }
-        
+
         p {
             font-size: 1.2em;
             line-height: 1.5;
         }
-        
+
         h2 {
             margin-top: 40px;
+        }
+
+        .faq-item {
+            margin-top: 20px;
+        }
+
+        .faq-item img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin-top: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -48,7 +62,18 @@
         <p>This section will explain the core functionality of the extension. Start by describing how the extension helps teams manage time zone differences when scheduling meetings.</p>
 
         <h2>Frequently Asked Questions</h2>
-        <p>This section will include common user questions and answers about the Team TimeZone extension.</p>
+        
+        <!-- FAQ Item 1 -->
+        <div class="faq-item">
+            <p><strong>Example of changing the timezone label to a team member's name:</strong></p>
+            <img src="change-timezone-label.png" alt="Example of changing the timezone label">
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item">
+            <p><strong>Example of adding the timezone to display:</strong></p>
+            <img src="add-timezone-display.png" alt="Example of adding the timezone to display">
+        </div>
     </div>
 
 </body>
