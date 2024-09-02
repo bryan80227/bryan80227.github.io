@@ -169,11 +169,11 @@
 
         function generatePrompt() {
             let promptText = "Here are the requirements gathered for the new feature:\n\n";
-            inputBoxes.forEach((input, index) => {
-                const questionText = input.previousElementSibling.innerText;
+            inputBoxes.forEach((input) => {
+                const questionText = input.previousElementSibling.innerText.split(":")[1].trim();
                 const answerText = input.value.trim();
                 if (answerText !== "") {
-                    promptText += `${questionText}\nAnswer: ${answerText}\n\n`;
+                    promptText += `Question: ${questionText}\nAnswer: ${answerText}\n\n`;
                 }
             });
 
