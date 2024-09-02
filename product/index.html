@@ -48,6 +48,16 @@
             cursor: pointer;
             opacity: 1;
         }
+        #promptContainer {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            display: none;
+        }
+        #promptContainer h2 {
+            margin-top: 0;
+        }
     </style>
 </head>
 <body>
@@ -55,7 +65,6 @@
     <h1>Requirements Gathering</h1>
 
     <div id="questionsContainer">
-        <!-- Repeat this structure for each question -->
         <div class="question">
             <label for="q1">1. What is the primary business goal of this feature?</label><br>
             <input type="text" id="q1" class="input-box" placeholder="Enter your answer...">
@@ -65,9 +74,9 @@
             <label for="q2">2. How does this feature align with the overall product strategy?</label><br>
             <input type="text" id="q2" class="input-box" placeholder="Enter your answer...">
         </div>
-        
-        <!-- Add more questions here following the same structure -->
-        
+
+        <!-- Add more questions here -->
+
     </div>
 
     <div class="progress-container">
@@ -77,11 +86,18 @@
 
     <button id="submitBtn" disabled>Submit</button>
 
+    <div id="promptContainer">
+        <h2>Generated Prompt</h2>
+        <p id="generatedPrompt"></p>
+    </div>
+
     <script>
         const inputBoxes = document.querySelectorAll('.input-box');
         const submitBtn = document.getElementById('submitBtn');
         const progressPie = document.getElementById('progressPie');
         const progressPercent = document.getElementById('progressPercent');
+        const promptContainer = document.getElementById('promptContainer');
+        const generatedPrompt = document.getElementById('generatedPrompt');
 
         const totalQuestions = inputBoxes.length;
         let answeredQuestions = 0;
@@ -92,6 +108,8 @@
                 checkProgress();
             });
         });
+
+        submitBtn.addEventListener('click', generatePrompt);
 
         function checkProgress() {
             answeredQuestions = 0;
@@ -116,7 +134,22 @@
                 submitBtn.style.cursor = "not-allowed";
             }
         }
+
+        function generatePrompt() {
+            let promptText = "Here are the requirements gathered for the new feature:\n\n";
+            inputBoxes.forEach((input, index) => {
+                const questionText = input.previousElementSibling.innerText;
+                const answerText = input.value.trim();
+                if (answerText !== "") {
+                    promptText += `${index + 1}. ${questionText}: ${answerText}\n\n`;
+                }
+            });
+
+            generatedPrompt.textContent = promptText;
+            promptContainer.style.display = 'block';
+        }
     </script>
 
 </body>
 </html>
+
