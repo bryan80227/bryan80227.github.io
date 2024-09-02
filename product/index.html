@@ -173,7 +173,7 @@
                 const questionText = input.previousElementSibling.innerText;
                 const answerText = input.value.trim();
                 if (answerText !== "") {
-                    promptText += `${index + 1}. ${questionText}: ${answerText}\n\n`;
+                    promptText += `${index + 1}. ${questionText}\nAnswer: ${answerText}\n\n`;
                 }
             });
 
