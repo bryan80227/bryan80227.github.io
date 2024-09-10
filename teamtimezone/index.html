@@ -180,10 +180,10 @@
             <p><strong>Email:</strong> stjohn.bryan@gmail.com</p>
             <p><strong>Phone:</strong> 303-883-1682</p>
 
-            <form action="mailto:stjohn.bryan@gmail.com" method="post" enctype="text/plain">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+            <form action="mailto:stjohn.bryan@gmail.com" method="post" enctype="text/plain" onsubmit="return formatEmail();">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
                 <input type="submit" value="Send Message">
             </form>
         </div>
@@ -192,6 +192,25 @@
             &copy; 2024 Team TimeZone. All rights reserved.
         </footer>
     </div>
+
+    <!-- JavaScript to Format Email Body -->
+    <script>
+        function formatEmail() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+
+            // Format the mailto body
+            var mailtoLink = 'mailto:stjohn.bryan@gmail.com?subject=Message from ' + name +
+                             '&body=' + 
+                             'Name: ' + name + '%0D%0A' + 
+                             'Email: ' + email + '%0D%0A' + 
+                             'Message: ' + '%0D%0A' + message;
+
+            window.location.href = mailtoLink;
+            return false; // Prevent form submission
+        }
+    </script>
 
 </body>
 </html>
