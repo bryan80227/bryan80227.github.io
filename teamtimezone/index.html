@@ -201,9 +201,9 @@
             var message = document.getElementById('message').value;
 
             // Properly format the email body with line breaks
-            var body = 'Name: ' + name + '%0D%0A' + 
-                       'Email: ' + email + '%0D%0A' + 
-                       'Message: ' + '%0D%0A' + message;
+            var body = 'Name: ' + name + '\n' + 
+                       'Email: ' + email + '\n' + 
+                       'Message: ' + '\n' + message;
 
             // Create mailto link with subject and formatted body
             var mailtoLink = 'mailto:stjohn.bryan@gmail.com?subject=Message from ' + encodeURIComponent(name) + '&body=' + encodeURIComponent(body);
