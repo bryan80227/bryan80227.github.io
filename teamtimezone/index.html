@@ -180,7 +180,7 @@
             <p><strong>Email:</strong> stjohn.bryan@gmail.com</p>
             <p><strong>Phone:</strong> 303-883-1682</p>
 
-            <form action="mailto:stjohn.bryan@gmail.com" method="post" enctype="text/plain" onsubmit="return formatEmail();">
+            <form onsubmit="return formatEmail();">
                 <input type="text" id="name" name="name" placeholder="Your Name" required>
                 <input type="email" id="email" name="email" placeholder="Your Email" required>
                 <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
@@ -200,12 +200,13 @@
             var email = document.getElementById('email').value;
             var message = document.getElementById('message').value;
 
-            // Format the mailto body
-            var mailtoLink = 'mailto:stjohn.bryan@gmail.com?subject=Message from ' + name +
-                             '&body=' + 
-                             'Name: ' + name + '%0D%0A' + 
-                             'Email: ' + email + '%0D%0A' + 
-                             'Message: ' + '%0D%0A' + message;
+            // Properly format the email body with line breaks
+            var body = 'Name: ' + name + '%0D%0A' + 
+                       'Email: ' + email + '%0D%0A' + 
+                       'Message: ' + '%0D%0A' + message;
+
+            // Create mailto link with subject and formatted body
+            var mailtoLink = 'mailto:stjohn.bryan@gmail.com?subject=Message from ' + encodeURIComponent(name) + '&body=' + encodeURIComponent(body);
 
             window.location.href = mailtoLink;
             return false; // Prevent form submission
