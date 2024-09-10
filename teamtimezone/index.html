@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team TimeZone FAQ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Helvetica', sans-serif;
+            background-color: #f8f9fa; /* Light gray for the background */
             margin: 0;
             padding: 0;
             display: flex;
@@ -17,71 +25,86 @@
         }
 
         .container {
-            max-width: 800px;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            background-color: #ffffff; /* White background for content */
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
             border-radius: 10px;
-            text-align: center;
+            text-align: left; /* Left-align text for readability */
         }
 
         h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #2c3e50; /* Dark, muted blue for headings */
             text-align: center;
+            margin-bottom: 20px;
         }
 
         p {
-            font-size: 1.2em;
-            line-height: 1.5;
-            text-align: center;
+            font-size: 1.1em;
+            color: #4d4d4d; /* Softer dark gray for paragraphs */
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
 
         .faq-item {
-            margin-top: 20px;
+            margin-top: 40px;
             padding: 20px;
-            background-color: #e7f3ff; /* Light blue background */
-            border-radius: 10px;
+            background-color: #f1f3f5; /* Soft, cool gray background for FAQs */
+            border-radius: 8px;
+            border: 1px solid #d1d8e0; /* Light border for structure */
         }
 
         .faq-item img {
             width: 100%;
-            max-width: 600px;
+            max-width: 800px;
             height: auto;
             display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            border-radius: 8px;
         }
 
         .search-box {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #e7f3ff;
-            border-radius: 10px;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f1f3f5;
+            border-radius: 8px;
+            border: 1px solid #d1d8e0;
             text-align: center;
         }
 
         .search-box input[type="text"] {
-            width: 70%;
-            padding: 10px;
-            font-size: 1em;
+            width: 75%;
+            padding: 12px;
+            font-size: 1.1em;
             border-radius: 5px;
-            border: 1px solid #ccc;
+            border: 1px solid #ced4da;
+            margin-bottom: 10px;
         }
 
         .search-box input[type="submit"] {
-            padding: 10px 20px;
-            font-size: 1em;
-            margin-top: 10px;
+            padding: 10px 30px;
+            font-size: 1.1em;
+            background-color: #2c3e50; /* Dark muted blue for buttons */
+            color: white;
             border-radius: 5px;
             border: none;
-            background-color: #007bff;
-            color: white;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
         .search-box input[type="submit"]:hover {
-            background-color: #0056b3;
+            background-color: #34495e; /* Slightly darker blue on hover */
         }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+
     </style>
 </head>
 <body>
@@ -109,6 +132,10 @@
                 <input type="submit" value="Search">
             </form>
         </div>
+
+        <footer>
+            &copy; 2024 Team TimeZone. All rights reserved.
+        </footer>
     </div>
 
     <script>
