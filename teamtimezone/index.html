@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team TimeZone FAQ</title>
     <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Team TimeZone extension FAQ and support page. Learn how to manage team time zones with ease.">
+    <meta name="keywords" content="Team TimeZone, Chrome extension, time zone management, remote work">
+
     <style>
         /* General Reset */
         * {
@@ -19,6 +22,7 @@
             margin: 0;
             padding: 0;
             color: #ffffff; /* Bright white text */
+            scroll-behavior: smooth;
         }
 
         /* Header Styles */
@@ -28,6 +32,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         header h2 {
@@ -144,6 +151,89 @@
             font-size: 0.9em;
             color: #cccccc;
         }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header h2 {
+                font-size: 1.5em;
+            }
+
+            .contact-card input[type="text"],
+            .contact-card input[type="email"],
+            .contact-card textarea {
+                font-size: 1em;
+            }
+        }
+
+        /* Toggle switch for dark mode */
+        .switch {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            display: none;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #2196f3;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Light mode styles */
+        body.light-mode {
+            background-color: #f4f4f4;
+            color: #333333;
+        }
+
+        body.light-mode .container, body.light-mode .contact-card {
+            background-color: #ffffff;
+            border-color: #dddddd;
+        }
+
+        body.light-mode .switch {
+            background-color: #333333;
+        }
+
     </style>
 </head>
 <body>
@@ -158,6 +248,12 @@
             </ul>
         </nav>
     </header>
+
+    <!-- Toggle for dark mode -->
+    <label class="switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider round"></span>
+    </label>
 
     <div class="container">
         <h1>Frequently Asked Questions</h1>
@@ -181,8 +277,8 @@
             <p><strong>Phone:</strong> 303-883-1682</p>
 
             <form onsubmit="return formatEmail();">
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <input type="text" id="name" name="name" placeholder="Your Name" required pattern="^[a-zA-Z\s]+$" title="Name should only contain letters.">
+                <input type="email" id="email" name="email" placeholder="Your Email" required title="Please enter a valid email address.">
                 <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
                 <input type="submit" value="Send Message">
             </form>
@@ -193,8 +289,12 @@
         </footer>
     </div>
 
-    <!-- JavaScript to Format Email Body -->
+    <!-- JavaScript to Format Email Body and Dark Mode Toggle -->
     <script>
+        document.getElementById('darkModeToggle').addEventListener('change', function() {
+            document.body.classList.toggle('light-mode');
+        });
+
         function formatEmail() {
             var name = document.getElementById('name').value;
             var email = document.getElementById('email').value;
@@ -209,6 +309,8 @@
             var mailtoLink = 'mailto:stjohn.bryan@gmail.com?subject=Message from ' + encodeURIComponent(name) + '&body=' + encodeURIComponent(body);
 
             window.location.href = mailtoLink;
+
+            alert("Thank you for contacting us! Your message has been sent.");
             return false; // Prevent form submission
         }
     </script>
