@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bryan St. John</title>
     <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@300;400;700&display=swap" rel="stylesheet">
-    <meta name="description" content="The personal website of Bryan St. John, showcasing his portfolio, experience, and contact information.">
-    <meta name="keywords" content="Bryan St. John, Portfolio, Product Manager, TimeZone Extension, Contact">
-
+    <meta name="description" content="The personal website of Bryan St. John, showcasing his contact details and latest project.">
+    <meta name="keywords" content="Bryan St. John, Senior Product Manager, TimeZone Extension, Contact">
+    <!-- LinkedIn Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         /* General Reset */
         * {
@@ -40,7 +41,7 @@
         header h1 {
             color: #ffffff;
             margin: 0;
-            font-size: 2.5em;
+            font-size: 1.8em;
         }
 
         nav ul {
@@ -61,6 +62,24 @@
 
         nav ul li a:hover {
             color: #007bff; /* Accent color on hover */
+        }
+
+        /* Contact Info in Header */
+        .contact-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info p {
+            margin-right: 20px;
+            font-size: 1em;
+            color: #e0e0e0;
+        }
+
+        /* LinkedIn Icon Styling */
+        .linkedin-icon {
+            color: #0e76a8;
+            margin-left: 10px;
         }
 
         /* Main Container */
@@ -85,30 +104,6 @@
             color: #f1f1f1;
             line-height: 1.6;
             margin-bottom: 20px;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-            background-image: url('your-image.jpg'); /* Replace with your image */
-            background-size: cover;
-            color: #ffffff;
-        }
-
-        .hero h1 {
-            font-size: 3.5em;
-        }
-
-        .hero p {
-            font-size: 1.5em;
-            margin-top: 20px;
-        }
-
-        /* About Section */
-        .about {
-            text-align: center;
-            padding: 60px 20px;
         }
 
         /* Contact Section */
@@ -171,7 +166,7 @@
             }
 
             header h1 {
-                font-size: 2em;
+                font-size: 1.5em;
             }
 
             .contact-card input[type="text"],
@@ -248,40 +243,28 @@
 
     <!-- Header with Navigation -->
     <header>
-        <h1>Bryan St. John</h1>
+        <h1>Senior Product Manager</h1>
         <nav>
             <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact Me</a></li>
+                <li><a href="mailto:stjohn.bryan@gmail.com">Contact Me</a></li>
+                <li><a href="https://www.linkedin.com/in/bryan-stjohn/" target="_blank">
+                    LinkedIn <i class="fab fa-linkedin linkedin-icon"></i>
+                </a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Toggle for Dark Mode -->
+    <!-- Contact Info in Header -->
+    <div class="contact-info">
+        <p>Email: stjohn.bryan@gmail.com</p>
+        <p>Phone: 303-883-1682</p>
+    </div>
+
+    <!-- Dark Mode Toggle -->
     <label class="switch">
         <input type="checkbox" id="darkModeToggle">
         <span class="slider round"></span>
     </label>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Bryan St. John</h1>
-        <p>Senior Product Manager | Lakewood, Colorado</p>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <h2>About Me</h2>
-        <p>Experienced product manager with a proven track record of leading successful projects, optimizing processes, and driving business growth. Passionate about developing innovative solutions and enhancing user experiences.</p>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section class="container" id="portfolio">
-        <h2>Latest Project</h2>
-        <p>Check out my latest project: <a href="https://chromewebstore.google.com/detail/team-timezone/oofdhkhjhdkoiiojlkmhpmnifopdhmmj?hl=en-US&utm_source=ext_sidebar" target="_blank">Team TimeZone Chrome Extension</a></p>
-        <img src="extension-thumbnail.png" alt="Team TimeZone Thumbnail" style="width:100%; max-width:400px; margin-top:20px;">
-    </section>
 
     <!-- Contact Section -->
     <div class="contact-card" id="contact">
