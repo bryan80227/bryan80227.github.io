@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bryan St. John</title>
+    <title>Bryan St. John - Product Management</title>
     <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@300;400;700&display=swap" rel="stylesheet">
-    <meta name="description" content="The personal website of Bryan St. John, showcasing his contact details and latest project.">
-    <meta name="keywords" content="Bryan St. John, Product Management, TimeZone Extension, Contact">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Bryan St. John's personal website showcasing product management expertise, latest projects, and articles.">
+    <meta name="keywords" content="Bryan St. John, Bryan Stjohn, product management, chrome extension, Team TimeZone, LinkedIn articles">
+    <meta name="author" content="Bryan St. John">
+    <meta property="og:title" content="Bryan St. John - Product Management">
+    <meta property="og:description" content="Discover Bryan St. John's portfolio, latest projects, and insightful articles.">
+    <meta property="og:image" content="extension-thumbnail.png">
+    <meta property="og:url" content="https://www.bryanstjohn.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="index, follow">
+    
     <!-- LinkedIn Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
     <style>
         /* General Reset */
         * {
@@ -197,67 +208,6 @@
             }
         }
 
-        /* Dark Mode Toggle */
-        .switch {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-        }
-
-        .switch input {
-            display: none;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: 0.4s;
-            border-radius: 34px;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: 0.4s;
-            border-radius: 50%;
-        }
-
-        input:checked + .slider {
-            background-color: #2196f3;
-        }
-
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
-
-        /* Light mode styles */
-        body.light-mode {
-            background-color: #f4f4f4;
-            color: #333333;
-        }
-
-        body.light-mode .container {
-            background-color: #ffffff;
-            border-color: #dddddd;
-        }
-
-        body.light-mode .switch {
-            background-color: #333333;
-        }
-
     </style>
 </head>
 <body>
@@ -282,7 +232,7 @@
 
     <!-- Latest Project Section -->
     <section class="container project-section">
-        <img src="extension-thumbnail.png" alt="Team TimeZone Thumbnail">
+        <img src="extension-thumbnail.png" alt="Team TimeZone Thumbnail by Bryan St. John">
         <div>
             <h2>Latest Project</h2>
             <p>Check out my latest project: <a href="https://chromewebstore.google.com/detail/team-timezone/oofdhkhjhdkoiiojlkmhpmnifopdhmmj?hl=en-US&utm_source=ext_sidebar" target="_blank" class="project-link">Team TimeZone Chrome Extension</a></p>
@@ -292,14 +242,14 @@
 
     <!-- LinkedIn Embedded Articles with Descriptions -->
     <div class="linkedin-embed container">
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7079496991453413376" height="543" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7079496991453413376" height="543" width="504" frameborder="0" allowfullscreen="" title="Bryan St. John - Cover Letter Article"></iframe>
         <div class="linkedin-description">
             <p>I optimized my prompts to help job seekers write informative, human-like cover letters.</p>
         </div>
     </div>
 
     <div class="linkedin-embed container">
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7079182380573331457" height="501" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7079182380573331457" height="501" width="504" frameborder="0" allowfullscreen="" title="Bryan St. John - Product Requirements Article"></iframe>
         <div class="linkedin-description">
             <p>An insightful way to gather product requirements with just one question!</p>
         </div>
@@ -308,13 +258,6 @@
     <footer>
         &copy; 2024 Bryan St. John. All rights reserved.
     </footer>
-
-    <!-- JavaScript to Format Email Body and Dark Mode Toggle -->
-    <script>
-        document.getElementById('darkModeToggle').addEventListener('change', function() {
-            document.body.classList.toggle('light-mode');
-        });
-    </script>
 
 </body>
 </html>
