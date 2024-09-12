@@ -6,7 +6,7 @@
     <title>Bryan St. John</title>
     <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@300;400;700&display=swap" rel="stylesheet">
     <meta name="description" content="The personal website of Bryan St. John, showcasing his contact details and latest project.">
-    <meta name="keywords" content="Bryan St. John, Senior Product Manager, TimeZone Extension, Contact">
+    <meta name="keywords" content="Bryan St. John, Product Management, TimeZone Extension, Contact">
     <!-- LinkedIn Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
@@ -148,7 +148,21 @@
 
         /* LinkedIn Embedded Articles */
         .linkedin-embed {
+            display: flex;
+            align-items: center;
             margin-bottom: 30px;
+        }
+
+        .linkedin-embed iframe {
+            margin-right: 30px;
+            border-radius: 8px;
+        }
+
+        /* LinkedIn Article Descriptions */
+        .linkedin-description {
+            flex: 1;
+            font-size: 1.2em;
+            color: #e0e0e0;
         }
 
         footer {
@@ -172,11 +186,11 @@
                 font-size: 1.5em;
             }
 
-            .project-section {
+            .project-section, .linkedin-embed {
                 flex-direction: column;
             }
 
-            .project-section img {
+            .project-section img, .linkedin-embed iframe {
                 margin-right: 0;
                 margin-bottom: 20px;
                 max-width: 100%;
@@ -251,8 +265,7 @@
     <!-- Header with Navigation -->
     <header>
         <div class="header-left">
-            <h1>Bryan St. John</h1>
-            <h1>Senior Product Manager</h1>
+            <h1>Bryan St. John - Product Management</h1>
         </div>
         <nav>
             <ul>
@@ -277,11 +290,19 @@
         </div>
     </section>
 
-    <!-- LinkedIn Embedded Articles -->
+    <!-- LinkedIn Embedded Articles with Descriptions -->
     <div class="linkedin-embed container">
-        <h2>LinkedIn Articles</h2>
         <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7079496991453413376" height="543" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+        <div class="linkedin-description">
+            <p>I optimized my prompts to help job seekers write informative, human-like cover letters.</p>
+        </div>
+    </div>
+
+    <div class="linkedin-embed container">
         <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7079182380573331457" height="501" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+        <div class="linkedin-description">
+            <p>An insightful way to gather product requirements with just one question!</p>
+        </div>
     </div>
 
     <footer>
