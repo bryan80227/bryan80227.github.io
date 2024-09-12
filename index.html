@@ -73,6 +73,19 @@
             color: #007bff; /* Accent color on hover */
         }
 
+        /* Contact Information */
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .contact-info p {
+            margin: 0;
+            font-size: 1.1em;
+            color: #e0e0e0;
+        }
+
         /* LinkedIn Icon Styling */
         .linkedin-icon {
             color: #0e76a8;
@@ -103,11 +116,6 @@
             margin-bottom: 20px;
         }
 
-        /* LinkedIn Embedded Articles */
-        .linkedin-embed {
-            margin-bottom: 30px;
-        }
-
         /* Project Section */
         .project-section {
             display: flex;
@@ -125,6 +133,22 @@
             flex: 1;
             font-size: 1.2em;
             color: #e0e0e0;
+        }
+
+        /* Bold White Link for Project */
+        .project-link {
+            color: #ffffff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .project-link:hover {
+            color: #007bff; /* Change color on hover */
+        }
+
+        /* LinkedIn Embedded Articles */
+        .linkedin-embed {
+            margin-bottom: 30px;
         }
 
         footer {
@@ -232,13 +256,26 @@
         </div>
         <nav>
             <ul>
-                <li><a href="mailto:stjohn.bryan@gmail.com">Contact Me</a></li>
+                <li><a href="mailto:stjohn.bryan@gmail.com">Email: stjohn.bryan@gmail.com</a></li>
                 <li><a href="https://www.linkedin.com/in/bryan-stjohn/" target="_blank">
                     LinkedIn <i class="fab fa-linkedin linkedin-icon"></i>
                 </a></li>
             </ul>
         </nav>
+        <div class="contact-info">
+            <p>Phone: 303-883-1683</p>
+        </div>
     </header>
+
+    <!-- Latest Project Section -->
+    <section class="container project-section">
+        <img src="extension-thumbnail.png" alt="Team TimeZone Thumbnail">
+        <div>
+            <h2>Latest Project</h2>
+            <p>Check out my latest project: <a href="https://chromewebstore.google.com/detail/team-timezone/oofdhkhjhdkoiiojlkmhpmnifopdhmmj?hl=en-US&utm_source=ext_sidebar" target="_blank" class="project-link">Team TimeZone Chrome Extension</a></p>
+            <p>I created this chrome extension with AI as a fun side project.</p>
+        </div>
+    </section>
 
     <!-- LinkedIn Embedded Articles -->
     <div class="linkedin-embed container">
@@ -246,16 +283,6 @@
         <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7079496991453413376" height="543" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
         <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7079182380573331457" height="501" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
     </div>
-
-    <!-- Latest Project Section -->
-    <section class="container project-section">
-        <img src="extension-thumbnail.png" alt="Team TimeZone Thumbnail">
-        <div>
-            <h2>Latest Project</h2>
-            <p>Check out my latest project: <a href="https://chromewebstore.google.com/detail/team-timezone/oofdhkhjhdkoiiojlkmhpmnifopdhmmj?hl=en-US&utm_source=ext_sidebar" target="_blank">Team TimeZone Chrome Extension</a></p>
-            <p>I created this chrome extension with AI as a fun side project.</p>
-        </div>
-    </section>
 
     <footer>
         &copy; 2024 Bryan St. John. All rights reserved.
