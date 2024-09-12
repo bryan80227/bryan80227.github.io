@@ -1,1 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Toolbar Animation</title>
+  <style>
+    /* Toolbar Styling */
+    #toolbar {
+      position: relative;
+      background-color: #333;
+      color: #fff;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    /* Navigation Links (Optional) */
+    #toolbar a {
+      color: #fff;
+      margin-right: 15px;
+      text-decoration: none;
+    }
+
+    /* Animation Container */
+    #animation-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    /* Mouse and Cheese Styling */
+    .mouse, .cheese {
+      position: absolute;
+      bottom: 10px;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      opacity: 0; /* Hidden by default */
+    }
+
+    /* Mouse Specific Styling */
+    .mouse {
+      left: -30px; /* Start off-screen */
+    }
+
+    /* Cheese Specific Styling */
+    .cheese {
+      right: -30px; /* Start off-screen */
+      background-color: yellow;
+    }
+
+    /* Mouse Animation */
+    @keyframes mouseAnimation {
+      0% {
+        left: -30px;
+        opacity: 1;
+      }
+      50% {
+        left: calc(50% - 10px);
+      }
+      100% {
+        left: 100%;
+        opacity: 0;
+      }
+    }
+
+    /* Cheese Animation */
+    @keyframes cheeseAnimation {
+      0% {
+        right: -30px;
+        opacity: 0;
+      }
+      50% {
+        right: calc(50% - 10px);
+        opacity: 1;
+      }
+      100% {
+        right: 100%;
+        opacity: 0;
+      }
+    }
+
+    /* Apply Animation Classes */
+    .animate-mouse {
+      animation: mouseAnimation 5s linear forwards;
+    }
+
+    .animate-cheese {
+      animation: cheeseAnimation 5s linear forwards;
+    }
+
+    /* Timer Settings Styling */
+    #timer-settings {
+      margin: 20px;
+    }
+
+    #timer-settings label {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toolbar Navigation -->
+  <nav id="toolbar">
+    <!-- Existing toolbar content -->
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+
+    <!-- Animation Container -->
+    <div id="animation-container">
+      <div class="mouse"></div>
+      <div class="cheese"></div>
+    </div>
+  </nav>
+
+  <!-- Timer Interval Input -->
+  <div id="timer-settings">
+    <label for="interval">Set Animation Interval (seconds):</label>
+    <input type="number" id="interval" min="10" value="60">
+    <button id="set-interval">Set Interval</button>
+  </div>
+
+  <!-- JavaScript Code -->
+  <script>
+    let interval = 6000; // Default to 60 seconds
+    let animationTimeout;
+
+    function startAnimation() {
+      const mouse = document.querySelector('.mouse');
+      const cheese = document.querySelector('.cheese');
+
+      // Reset positions and apply animations
+      mouse.classList.add('animate-mouse');
+      cheese.classList.add('animate-cheese');
+
+      // Remove animation classes after the animation ends
+      setTimeout(() => {
+        mouse.classList.remove('animate-mouse');
+        cheese.classList.remove('animate-cheese');
+      }, 5000); // Duration of the animation
+
+      // Schedule the next animation
+      animationTimeout = setTimeout(startAnimation, interval);
+    }
+
+    // Start the animation after the initial interval
+    setTimeout(startAnimation, interval);
+
+    // Update the interval based on user input
+    document.getElementById('set-interval').addEventListener('click', () => {
+      const userInterval = parseInt(document.getElementById('interval').value, 10);
+      if (userInterval >= 10) {
+        interval = userInterval * 1000; // Convert seconds to milliseconds
+
+        // Clear any existing timeouts and restart the animation cycle
+        clearTimeout(animationTimeout);
+        setTimeout(startAnimation, interval);
+      } else {
+        alert('Please enter a value of 10 seconds or more.');
+      }
+    });
+  </script>
+</body>
+</html>
 
