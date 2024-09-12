@@ -44,6 +44,15 @@
             font-size: 1.8em;
         }
 
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-left h1 {
+            margin-right: 20px;
+        }
+
         nav ul {
             list-style: none;
             display: flex;
@@ -62,18 +71,6 @@
 
         nav ul li a:hover {
             color: #007bff; /* Accent color on hover */
-        }
-
-        /* Contact Info in Header */
-        .contact-info {
-            display: flex;
-            align-items: center;
-        }
-
-        .contact-info p {
-            margin-right: 20px;
-            font-size: 1em;
-            color: #e0e0e0;
         }
 
         /* LinkedIn Icon Styling */
@@ -106,46 +103,28 @@
             margin-bottom: 20px;
         }
 
-        /* Contact Section */
-        .contact-card {
-            margin-top: 50px;
-            padding: 20px;
-            background-color: #444444;
-            border-radius: 10px;
-            border: 1px solid #555555;
-            text-align: center;
+        /* LinkedIn Embedded Articles */
+        .linkedin-embed {
+            margin-bottom: 30px;
         }
 
-        .contact-card p {
+        /* Project Section */
+        .project-section {
+            display: flex;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .project-section img {
+            max-width: 400px;
+            margin-right: 30px;
+            border-radius: 8px;
+        }
+
+        .project-section p {
+            flex: 1;
             font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-
-        .contact-card input[type="text"],
-        .contact-card input[type="email"],
-        .contact-card textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            background-color: #2c2c2c;
-            border: 1px solid #555555;
-            border-radius: 5px;
-            color: #ffffff;
-        }
-
-        .contact-card input[type="submit"] {
-            padding: 10px 30px;
-            font-size: 1.1em;
-            background-color: #007bff;
-            color: white;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact-card input[type="submit"]:hover {
-            background-color: #0056b3;
+            color: #e0e0e0;
         }
 
         footer {
@@ -169,10 +148,14 @@
                 font-size: 1.5em;
             }
 
-            .contact-card input[type="text"],
-            .contact-card input[type="email"],
-            .contact-card textarea {
-                font-size: 1em;
+            .project-section {
+                flex-direction: column;
+            }
+
+            .project-section img {
+                margin-right: 0;
+                margin-bottom: 20px;
+                max-width: 100%;
             }
         }
 
@@ -228,7 +211,7 @@
             color: #333333;
         }
 
-        body.light-mode .container, body.light-mode .contact-card {
+        body.light-mode .container {
             background-color: #ffffff;
             border-color: #dddddd;
         }
@@ -243,7 +226,10 @@
 
     <!-- Header with Navigation -->
     <header>
-        <h1>Senior Product Manager</h1>
+        <div class="header-left">
+            <h1>Bryan St. John</h1>
+            <h1>Senior Product Manager</h1>
+        </div>
         <nav>
             <ul>
                 <li><a href="mailto:stjohn.bryan@gmail.com">Contact Me</a></li>
@@ -254,31 +240,22 @@
         </nav>
     </header>
 
-    <!-- Contact Info in Header -->
-    <div class="contact-info">
-        <p>Email: stjohn.bryan@gmail.com</p>
-        <p>Phone: 303-883-1682</p>
+    <!-- LinkedIn Embedded Articles -->
+    <div class="linkedin-embed container">
+        <h2>LinkedIn Articles</h2>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7079496991453413376" height="543" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7079182380573331457" height="501" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
     </div>
 
-    <!-- Dark Mode Toggle -->
-    <label class="switch">
-        <input type="checkbox" id="darkModeToggle">
-        <span class="slider round"></span>
-    </label>
-
-    <!-- Contact Section -->
-    <div class="contact-card" id="contact">
-        <h2>Contact Me</h2>
-        <p><strong>Email:</strong> stjohn.bryan@gmail.com</p>
-        <p><strong>Phone:</strong> 303-883-1682</p>
-
-        <form onsubmit="return formatEmail();">
-            <input type="text" id="name" name="name" placeholder="Your Name" required pattern="^[a-zA-Z\s]+$" title="Name should only contain letters.">
-            <input type="email" id="email" name="email" placeholder="Your Email" required title="Please enter a valid email address.">
-            <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
-            <input type="submit" value="Send Message">
-        </form>
-    </div>
+    <!-- Latest Project Section -->
+    <section class="container project-section">
+        <img src="extension-thumbnail.png" alt="Team TimeZone Thumbnail">
+        <div>
+            <h2>Latest Project</h2>
+            <p>Check out my latest project: <a href="https://chromewebstore.google.com/detail/team-timezone/oofdhkhjhdkoiiojlkmhpmnifopdhmmj?hl=en-US&utm_source=ext_sidebar" target="_blank">Team TimeZone Chrome Extension</a></p>
+            <p>I created this chrome extension with AI as a fun side project.</p>
+        </div>
+    </section>
 
     <footer>
         &copy; 2024 Bryan St. John. All rights reserved.
@@ -289,25 +266,6 @@
         document.getElementById('darkModeToggle').addEventListener('change', function() {
             document.body.classList.toggle('light-mode');
         });
-
-        function formatEmail() {
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var message = document.getElementById('message').value;
-
-            // Properly format the email body with line breaks
-            var body = 'Name: ' + name + '\n' + 
-                       'Email: ' + email + '\n' + 
-                       'Message: ' + '\n' + message;
-
-            // Create mailto link with subject and formatted body
-            var mailtoLink = 'mailto:stjohn.bryan@gmail.com?subject=Message from ' + encodeURIComponent(name) + '&body=' + encodeURIComponent(body);
-
-            window.location.href = mailtoLink;
-
-            alert("Thank you for contacting me! Your message has been sent.");
-            return false; // Prevent form submission
-        }
     </script>
 
 </body>
